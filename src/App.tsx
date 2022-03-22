@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -13,23 +12,18 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import { Grid } from '@mui/material';
 import { makeStyles } from "@material-ui/core/styles";
 import MenuList from './components/Sidebar';
 import Banner from './components/Banner';
 import Body from './components/Body'
-import Login from './components/Auth/Login'
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Time from './components/Sidebar/Time'
 import Footer from './components/Footer'
-const drawerWidth = 220;
 
+
+
+const drawerWidth = 220;
 const useStyles = makeStyles({
   topbar: {
       background: "#192734",
@@ -80,11 +74,7 @@ const useStyles = makeStyles({
 
 const StyledDiv = styled('div')(({ theme }) => ({
   backgroundColor: '#192734',
-  color: '#fff',
-  display: 'flex',
-  borderBottom: "1px solid #000"
-  
-
+  color: '#fff'
 }));
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -180,10 +170,9 @@ const handleDrawerClose = () => {
 };
 
   return (
+    
     <Fragment>
-
-         <StyledDiv>
-         
+      <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar  className={classes.topbar}>
@@ -221,8 +210,14 @@ const handleDrawerClose = () => {
 
 <Divider />
       </Drawer>
-      <Box  component="main" sx={{ display: 'flex', flexGrow: 1, p: 3 }} >
+
+
+
+      <StyledDiv>
+
+      <Box  component="main" sx={{flexGrow: 1, p: 3 }} >
       <DrawerHeader />
+
       <Grid container spacing={2} justifyContent="center"alignItems="center" textAlign="center"marginTop="20px"marginBottom="10px">
    <Banner/>
 <BorderBar/>
@@ -233,7 +228,7 @@ const handleDrawerClose = () => {
     </Box>
 
    </StyledDiv>
-
+   </Box>
    </Fragment>
   );
 }

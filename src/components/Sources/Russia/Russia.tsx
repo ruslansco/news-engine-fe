@@ -36,7 +36,7 @@ return (
   <>
   {loading === false ? (
 <div>
-<Grid container justifyContent="center" marginTop="10px" minHeight="800" minWidth="800">
+<Grid container justifyContent="center" marginTop="10px" minHeight="800" minWidth="800" marginLeft="30px">
    {news.map((article, id) => <Article key={id} article={article} />)}
    </Grid>
    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& > *': {m: 1,},}}>

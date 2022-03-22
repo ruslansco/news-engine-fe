@@ -36,10 +36,13 @@ function Ukraine() {
     <>
     {loading === false ? (
 <div>
-<Grid container justifyContent="center" marginTop="10px" minHeight="800" minWidth="800">
+<Grid container justifyContent="center"  marginTop="10px">
+
      {news.map((article, id) => <Article key={id} article={article} />)}
-     </Grid>
-     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& > *': {m: 1,},}}>
+     
+
+
+     <Box sx={{ display: 'flex', flexDirection: 'column',alignItems: 'center', '& > *': {m: 1,},}}>
      <ButtonGroup size="large">
      <Pagination
      totalPages={totalPages}
@@ -49,6 +52,7 @@ function Ukraine() {
    />
          </ButtonGroup>
          </Box>
+         </Grid>
    </div>
       ) : (
 <div>

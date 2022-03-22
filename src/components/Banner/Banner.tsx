@@ -4,16 +4,10 @@ import { withStyles } from '@material-ui/core/styles';
 import { Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { List, ListItemText, Paper } from '@mui/material';
-import CardMedia from '@mui/material/CardMedia';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
 import PublicIcon from '@mui/icons-material/Public';
 import StarIcon from '@mui/icons-material/Star';
@@ -72,8 +66,7 @@ function Banner(props:any) {
 
     return (
       <Grid container justifyContent="center" marginTop="20px">
-
-       <Box sx={{maxHeight: 300, minWidth: 350,maxWidth: 350, display: 'inline-block', mx: '2px', transform: 'scale(0.9)'}}>
+       <Box sx={{maxHeight: 300, minWidth: 350, maxWidth: 350, display: 'inline-block', mx: '2px', transform: 'scale(0.9)'}}>
       <CardContent sx={{ border:"1px solid #000",borderRadius: "10px", overflow:"hidden",background: "#151E29"}}>
       <Typography  sx={{ fontSize: "1.1em", fontFamily:"Roboto Slab", lineHeight:"1.5",fontWeight:"700"}}>
         Conflict
