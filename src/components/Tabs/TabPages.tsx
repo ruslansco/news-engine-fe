@@ -3,13 +3,12 @@ import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import TabUnstyled from '@mui/base/TabUnstyled';
-import { Grid } from '@mui/material';
 import { makeStyles } from "@material-ui/core/styles";
-import Ukraine from '../../Sources/Ukraine'
-import Russia from '../../Sources/Russia'
-import World from '../../Sources/World';
-import {Link} from 'react-scroll';
+import Ukraine from '../Sources/Ukraine'
+import Russia from '../Sources/Russia'
+import World from '../Sources/World';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 const useStyles = makeStyles({
   flexGrow: {
@@ -43,15 +42,13 @@ hover: {
 }
 });
 
-function BodyTabs() {
-  const [value, setValue] = React.useState(0);
+function TabPages() {
   const classes = useStyles();
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+
 
   return (
     <Container >
+      <Grid id="body" container spacing={2} justifyContent="center"alignItems="center" textAlign="center"marginTop="20px"marginBottom="10px">
 <TabsUnstyled defaultValue={0}>
       <TabsListUnstyled> 
         <TabUnstyled className={[classes.button, classes.hover].join(" ")}>Ukraine News</TabUnstyled>
@@ -62,9 +59,9 @@ function BodyTabs() {
       <TabPanelUnstyled value={1}><Russia/></TabPanelUnstyled>
       <TabPanelUnstyled value={2}><World/></TabPanelUnstyled>
     </TabsUnstyled>
-
+    </Grid>
     </Container>
 
   )
 }
-  export default BodyTabs;
+  export default TabPages;

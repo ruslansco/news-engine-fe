@@ -61,7 +61,7 @@ export interface UkraineArticleType {
    }
 
 
-export interface ArticleType {
+export interface ArticlesType {
   /*
     id: number,
     content: object,
@@ -80,6 +80,24 @@ export interface ArticleType {
    source: string,
   }
   
+  export interface ArticleType {
+    /*
+      id: number,
+      content: object,
+      created_at: string,
+      published: boolean,
+      */
+     id: number,
+     image: string,
+     date: Date,
+     link: string,
+     country: string,
+     title: string,
+     published: string,
+     time: string,
+     timestamp: Date,
+     source: string,
+    }
 
   export interface ContentType {
     /*

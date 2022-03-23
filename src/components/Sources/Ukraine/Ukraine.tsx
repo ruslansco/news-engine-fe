@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid } from '@mui/material';
 import { fetchUA } from '../../../api'
 import { UkraineArticleType } from '../../types'
-import Article from '../Article'
+import Articles from '../Articles'
 import Pagination from '../../Pagination';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -30,7 +30,7 @@ function Ukraine() {
     .then(news => setNews(news))
     setTotalPages(totalPages);
     setTimeout(() => setLoading(false),500);
-  }, [page]);
+  }, [page, totalPages]);
 
   return (
     <>
@@ -38,41 +38,34 @@ function Ukraine() {
 <div>
 <Grid container justifyContent="center"  marginTop="10px">
 
-     {news.map((article, id) => <Article key={id} article={article} />)}
-     
+     {news.map((articles, id) => <Articles key={id} articles={articles} />)}
+     </Grid>
 
-
-     <Box sx={{ display: 'flex', flexDirection: 'column',alignItems: 'center', '& > *': {m: 1,},}}>
-     <ButtonGroup size="large">
      <Pagination
      totalPages={totalPages}
      currentPage={page}
      handlePrevPage={handlePrevPage}
      handleNextPage={handleNextPage}
    />
-         </ButtonGroup>
-         </Box>
-         </Grid>
+
    </div>
       ) : (
+
+       
 <div>
-<Grid container justifyContent="center" marginTop="10px" minHeight="800" minWidth="800">
-   <Stack sx={{ width: '100%', color:'#52edc7', minWidth:800, margin:"50px"}} spacing={1}>
-      <LinearProgress color="inherit" /> 
-    </Stack>
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& > *': {m: 1,},}}>
-     <ButtonGroup size="large">
+<Grid container justifyContent="center"  marginTop="10px">
+
+<LinearProgress color="inherit" /> 
+     </Grid>
+
      <Pagination
      totalPages={totalPages}
      currentPage={page}
      handlePrevPage={handlePrevPage}
      handleNextPage={handleNextPage}
    />
-         </ButtonGroup>
-         </Box>
-    </Grid>
-    
-         </div>
+
+   </div>
       )}
       </>
   )

@@ -5,7 +5,7 @@ import { Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
-import { List, ListItemText, Paper } from '@mui/material';
+import { List} from '@mui/material';
 import Link from '@mui/material/Link';
 import ListItem from '@mui/material/ListItem';
 import AirplanemodeActiveIcon from '@mui/icons-material/AirplanemodeActive';
@@ -49,26 +49,25 @@ function Banner(props:any) {
 
     const { classes } = props;
     const today = new Date();
-    const date = today.toISOString().slice(0, 10)
     const hours = (today.getHours())
     const time_updated = (hours>9) ? (hours-9) : (hours-9*-1)
 
-    
      
   React.useEffect(() => {
     fetchALL<AllArticleType[]>("news/?page=1")
     .then(news => setNews(news));
-  }, [news]);
+     setMystate(myState);
+  }, [news, myState]);
 
   React.useEffect(()=>{
     console.log(myState, '- Has changed')
   },[myState]);
 
     return (
-      <Grid container justifyContent="center" marginTop="20px">
+      <Grid container spacing={2} justifyContent="center"alignItems="center" textAlign="center"marginTop="35px"marginBottom="10px" >
        <Box sx={{maxHeight: 300, minWidth: 350, maxWidth: 350, display: 'inline-block', mx: '2px', transform: 'scale(0.9)'}}>
       <CardContent sx={{ border:"1px solid #000",borderRadius: "10px", overflow:"hidden",background: "#151E29"}}>
-      <Typography  sx={{ fontSize: "1.1em", fontFamily:"Roboto Slab", lineHeight:"1.5",fontWeight:"700"}}>
+      <Typography  style={{ fontSize: "1.1em", fontFamily:"Roboto Slab", lineHeight:"1.5",fontWeight:"700", color:"#fff"}}>
         Conflict
       </Typography>
       <div  className={classes.cellbar}></div>
@@ -102,7 +101,7 @@ Internationally considered a war of aggression, it is the biggest assault on a E
     <Box sx={{maxHeight: 300, minWidth: 350,maxWidth: 350, display: 'inline-block', mx: '2px', transform: 'scale(0.9)'}}>
 
       <CardContent sx={{ border:"1px solid #000",borderRadius: "10px", overflow:"hidden",background: "#151E29"}}>
-      <Typography  sx={{ fontSize: "1.1em", fontFamily:"Roboto Slab", lineHeight:"1.5",fontWeight:"700"}}>
+      <Typography  style={{ fontSize: "1.1em", fontFamily:"Roboto Slab", lineHeight:"1.5",fontWeight:"700", color:"#fff"}}>
         Live News
       </Typography>
       <div  className={classes.cellbar}></div>
@@ -110,7 +109,7 @@ Internationally considered a war of aggression, it is the biggest assault on a E
       {React.Children.toArray(news.map((article) => 
 <ListItem disableGutters divider dense>
 <ArrowRightAltIcon   sx={{marginRight:'5px', color:'#52edc7'}} />
-          <Typography sx={{ color:'#f5f6f7', paddingRight:"2px"}}>
+          <Typography style={{ color:'#f5f6f7', paddingRight:"2px"}}>
           {((article.title).length < 80) ? ((article.title).trimEnd()+".") : ((article.title).substring(0,77)+"..")}
       </Typography>     
       </ListItem>
@@ -127,17 +126,17 @@ Internationally considered a war of aggression, it is the biggest assault on a E
     <Box sx={{maxHeight: 300, minWidth: 350,maxWidth: 350,display: 'inline-block', mx: '2px', transform: 'scale(0.9)'}}>
 
       <CardContent sx={{ border:"1px solid #000",borderRadius: "10px", overflow:"hidden",background: "#151E29"}}>
-      <Typography  sx={{ fontSize: "1.1em", fontFamily:"Roboto Slab", lineHeight:"1.5",fontWeight:"700"}}>
+      <Typography  style={{ fontSize: "1.1em", fontFamily:"Roboto Slab", lineHeight:"1.5",fontWeight:"700", color:"#fff"}}>
         Estimated Losses
       </Typography>
       <div  className={classes.cellbar}></div>
       <List
-      sx={{ width: '100%', textAlign:'left', maxWidth: 360}}
+      style={{ width: '100%', textAlign:'left', maxWidth: 360}}
       aria-label="contacts"
     >
-      <ListItem   divider dense sx={{marginLeft:'1em'}}>
+      <ListItem   divider dense style={{marginLeft:'1em'}}>
             <StarIcon  sx={{ mb: 0.5, marginRight:'5px', color:'#52edc7'}} />
-          <Typography sx={{ color:'#f5f6f7', marginLeft:'0.3em'}}>
+          <Typography style={{ color:'#f5f6f7', marginLeft:'0.3em'}}>
         Deaths: At least 19K
       </Typography>     
       </ListItem>

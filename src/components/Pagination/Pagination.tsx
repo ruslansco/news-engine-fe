@@ -44,27 +44,29 @@ const classes = useStyles();
 <Link to="body" spy={true} smooth={true}>
 
    <Button
-      sx={{background: "#151E29", border: "1px solid #000", margin:"5px", "&:hover": {
+      sx={{"&:hover": {
         border: "1px solid #40c4a4",
         color: "#52edc7",
         transition: 'all .2s ease-in-out', 
             transform: 'scale(0.95)' 
       }}}
+      style={{background: "#151E29", margin:"5px"}}
       onClick={() => handlePrevPage(currentPage)}
       disabled={currentPage === 1}
 >
-<Typography color="#fff"> <ArrowBackIosNewIcon/></Typography>
+<ArrowBackIosNewIcon sx={{color:"#fff",margin:"5px"}} />
     </Button>
-
     </Link>
 
-    <Button disabled sx={{background: "#151E29",border: "1px solid #000", margin:"5px"}}>
-      <Typography color="#fff"> Page {currentPage} of {totalPages}</Typography>
+    <Button disabled style={{background: "#151E29",margin:"5px"}}>
+      <Typography color="#fff" padding="10px"> Page {currentPage} of {totalPages}</Typography>
     </Button>
 
-<Link to="body" spy={true} smooth={true}>
+    <Link to="body" spy={true} smooth={true}>
+        
     <Button
-      sx={{background: "#151E29",border: "1px solid #000", margin:"5px","&:hover": {
+    style={{background: "#151E29", margin:"5px"}}
+      sx={{"&:hover": {
         border: "1px solid #40c4a4",
         color: "#52edc7",
         transition: 'all .2s ease-in-out', 
@@ -73,9 +75,11 @@ const classes = useStyles();
       onClick={() => handleNextPage(currentPage)}
       disabled={currentPage === totalPages}
     >
-       <Typography color="#fff"> <ArrowForwardIosIcon/></Typography>
+ 
+      <ArrowForwardIosIcon sx={{color:"#fff",margin:"5px"}} />
+ 
     </Button>
-</Link>
+    </Link>
     </>
 
   );
