@@ -6,13 +6,14 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Button from '@mui/material/Button';
-import Time from '../Nav/Time';
+import Time from './Time';
 import MuiDrawer from '@mui/material/Drawer';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Divider from '@mui/material/Divider';
 import CssBaseline from '@mui/material/CssBaseline';
 import MenuList from './MenuItems'
+import { Link } from "react-router-dom";
 
 const drawerWidth = 220;
 
@@ -111,7 +112,13 @@ const handleDrawerClose = () => {
             }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>ProNews Live Data</Typography>
+  
+            <Typography variant="h5" noWrap component="div" style={{marginLeft:"15px"}} sx={{ flexGrow: 1}}>
+            <Link style={{ textDecoration: 'none', color:'#fff',fontFamily:"Roboto Slab",marginLeft:'0.2em',  fontSize:"1em", fontWeight: 500}}
+                to={`/`}>
+                 ProNews.pro
+                 </Link>
+          </Typography>
 
           <Button color="inherit"><Time/></Button>
         </Toolbar>

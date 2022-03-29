@@ -32,6 +32,7 @@ export interface UkraineArticleType {
    source: string,
   }
   
+  
   export interface RussiaArticleType {
 
     id: number,
@@ -58,6 +59,7 @@ export interface UkraineArticleType {
     time: string,
     timestamp: Date,
     source: string,
+    text: string
    }
 
 
@@ -77,7 +79,7 @@ export interface ArticlesType {
    published: string,
    time: string,
    timestamp: Date,
-   source: string,
+   source: string
   }
   
   export interface ArticleType {

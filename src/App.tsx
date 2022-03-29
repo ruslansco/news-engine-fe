@@ -1,43 +1,51 @@
-import React, { Fragment } from 'react';
+import React from "react";
 import './App.css';
 import { styled, useTheme, Theme, CSSObject} from '@mui/material/styles';
+import { BrowserRouter as Router, Route, Routes, Outlet, Link  } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Article from './components/Pages/Article'
+import WorldArticle from './components/Pages/WorldArticle'
+import NoMatch from './components/Pages/NoMatch'
+import Home from './components/Pages/Home'
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import Box from '@mui/material/Box';
-import Nav from './components/Nav'
-import Banner from './components/Banner'
-import TabPages from './components/Tabs'
+const themeLight = createTheme({
+  palette: {
+    background: {
+      default: "#e4f0e2"
+    }
+  }
+});
+
+const themeDark = createTheme({
+  palette: {
+    background: {
+      default: "#192734"
+    },
+    text: {
+      primary: "#ffffff"
+    }
+  }
+});
 
 function App() {
-
-
-  const StyledSection = styled('section')(({ theme }) => ({
-    background: '#192734',
-    color: '#fff'
-  }));
-
-  const BorderBar = styled('div')(({ theme }) => ({
-    backgroundColor: '#52edc7',
-    width: '70%',
-    margin: '5px auto',
-    padding: '1px'
+  const [light, setLight] = React.useState(false);
   
-  }));
-
   return (
+    <ThemeProvider theme={light ? themeLight : themeDark}>
+      <CssBaseline />
+<Routes>
+<Route path="/" element={<Home />} />
+<Route path="/news/:articleCountry/:articleId" element={<Article />} />
+<Route path="/news/world/:articleTitle" element={<WorldArticle />} />
+<Route path="*" element={<NoMatch />} />
+</Routes>
 
-    <Fragment>
-
-<Box sx={{ display: 'flex' }}>
-<Nav/>
-  <Box component="main" sx={{flexGrow: 1, p: 3, background:"#192734"}} >
-   <Banner/>
-   <BorderBar/>
-<TabPages/>
-   </Box>
-     </Box>
-   </Fragment>
-
+</ThemeProvider>
   );
 }
 
 export default App;
+
+

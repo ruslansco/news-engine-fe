@@ -4,9 +4,9 @@ import TabsListUnstyled from '@mui/base/TabsListUnstyled';
 import TabPanelUnstyled from '@mui/base/TabPanelUnstyled';
 import TabUnstyled from '@mui/base/TabUnstyled';
 import { makeStyles } from "@material-ui/core/styles";
-import Ukraine from '../Sources/Ukraine'
-import Russia from '../Sources/Russia'
-import World from '../Sources/World';
+import Ukraine from '../../../Sources/Ukraine'
+import Russia from '../../../Sources/Russia'
+import World from '../../../Sources/World';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 

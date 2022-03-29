@@ -2,8 +2,8 @@ import React from 'react'
 import { Grid } from '@mui/material';
 import { fetchRU } from '../../../api'
 import { RussiaArticleType } from '../../types'
-import Articles from '../Articles'
-import Pagination from '../../Pagination';
+import Articles from '../ArticlesList'
+import Pagination from '../Pagination';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import Stack from '@mui/material/Stack';
@@ -28,7 +28,7 @@ function Russia() {
     fetchRU<RussiaArticleType[]>("news/russia?page="+page)
     .then(news => setNews(news))
     setTotalPages(totalPages);
-    setTimeout(() => setLoading(false),500);
+    setTimeout(() => setLoading(false),600);
   }, [page, totalPages]);
   
 
@@ -51,13 +51,10 @@ return (
    </div>
     ) : (
 
-<div>
-<Grid container justifyContent="center"  marginTop="10px">
+<div style={{color:"#52edc7"}}>
+<LinearProgress color="inherit" sx={{margin:"25px"}}/> 
 
-<LinearProgress color="inherit" /> 
-     </Grid>
-
-     <Pagination
+<Pagination
      totalPages={totalPages}
      currentPage={page}
      handlePrevPage={handlePrevPage}

@@ -28,7 +28,8 @@ function MenuList(props) {
   return (
     <div className={classes.root}>
       <List component="nav">
-        <Link style={{color:"#fff",textDecoration:"none"}} to={{pathname: '/'}}>
+      <Link style={{ textDecoration: 'none',color:'#fff' }}
+      to={`/`}>
         <ListItem button>
           <ListItemIcon className={classes.icon}>
             <InboxIcon />
@@ -36,19 +37,24 @@ function MenuList(props) {
           <ListItemText primary="News" />
         </ListItem>
         </Link>
+        <Link style={{ textDecoration: 'none',color:'#fff' }}
+      to={`/chatroom`}>
         <ListItem button>
           <ListItemIcon className={classes.icon}>
             <DesktopMacIcon />
           </ListItemIcon>
           <ListItemText primary="Chat Room" />
         </ListItem>
+        </Link>
+        <Link style={{ textDecoration: 'none',color:'#fff' }}
+      to={`/search`}>
         <ListItem button>
           <ListItemIcon className={classes.icon}>
             < BuildIcon/>
           </ListItemIcon>
           <ListItemText primary="Search" />
         </ListItem>
-
+        </Link>
 
         <ListItem button>
           <ListItemIcon className={classes.icon}>

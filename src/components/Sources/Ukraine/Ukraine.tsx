@@ -2,19 +2,25 @@ import React from 'react'
 import { Grid } from '@mui/material';
 import { fetchUA } from '../../../api'
 import { UkraineArticleType } from '../../types'
-import Articles from '../Articles'
-import Pagination from '../../Pagination';
+import Articles from '../ArticlesList'
+import Pagination from '../Pagination';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 import Stack from '@mui/material/Stack';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import CssBaseline from "@mui/material/CssBaseline";
 
 function Ukraine() {
   const [news, setNews] = React.useState<UkraineArticleType[]>([]);
   
-  const [loading, setLoading] = React.useState(true);
+  
   const [page, setPage] = React.useState(1);
   const [totalPages, setTotalPages] = React.useState(99);
+  
+  const [loading, setLoading] = React.useState(true);
+  const handleLoading = () => {
+    setLoading(false);
+    }
   
   const handlePrevPage = (prevPage: number) => {
     setPage((prevPage) => prevPage - 1);
@@ -29,12 +35,13 @@ function Ukraine() {
     fetchUA<UkraineArticleType[]>("news/ukraine?page="+page)
     .then(news => setNews(news))
     setTotalPages(totalPages);
-    setTimeout(() => setLoading(false),500);
+    setTimeout(() => setLoading(false),600);
   }, [page, totalPages]);
 
   return (
     <>
-    {loading === false ? (
+    <CssBaseline />
+    {loading===false ? (
 <div>
 <Grid container justifyContent="center"  marginTop="10px">
 
@@ -51,14 +58,10 @@ function Ukraine() {
    </div>
       ) : (
 
-       
-<div>
-<Grid container justifyContent="center"  marginTop="10px">
+<div style={{color:"#52edc7"}}>
+<LinearProgress color="inherit" sx={{margin:"25px"}}/> 
 
-<LinearProgress color="inherit" /> 
-     </Grid>
-
-     <Pagination
+<Pagination
      totalPages={totalPages}
      currentPage={page}
      handlePrevPage={handlePrevPage}
