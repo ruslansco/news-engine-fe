@@ -25,6 +25,7 @@ import Divider from '@mui/material/Divider';
 import CircularProgress from '@mui/material/CircularProgress';
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import SnackbarContent from '@mui/material/SnackbarContent';
 
 function Article() {
   const [loading, setLoading] = React.useState(true);
@@ -56,7 +57,7 @@ function Article() {
 <Banner/>
 {loading === false ? (
 
-<Container style={{minWidth:"80%",maxWidth:"80%"}}>
+<Container style={{minWidth:"60%",maxWidth:"60%"}}>
 <IconButton color="secondary" aria-label="Go back" onClick={() => navigate(-1)}>
         <ArrowBackIcon />
       </IconButton>
@@ -67,7 +68,7 @@ function Article() {
   
   <CardContent style={{}}>
 
-  <Typography style={{color:'#f5f6f7',padding:"5px",fontFamily:"Roboto",fontSize:"1.3em", fontWeight:600, textTransform: "uppercase"}}>
+  <Typography style={{color:'#f5f6f7',margin:"5px",fontFamily:"Roboto",fontSize:"1.3em", fontWeight:600, textTransform: "uppercase"}}>
   {String(arr[1])}
        </Typography>
        <CardMedia
@@ -83,16 +84,18 @@ function Article() {
         alt="Not Found"
         src={String(arr[2])}
       />
-       <Divider style={{background:"#52edc7",marginTop:"15px",marginBottom:"10px"}} variant="middle"/>
+       <Divider style={{background:"#52edc7",marginTop:"10px",marginBottom:"10px"}} variant="middle"/>
   <List  style={{ width: '100%', textAlign:'center'}}>
-      <ListItem dense>
 
- <div style={{columnCount:"3"}}>
-          <Typography style={{ fontFamily:"Roboto", margin:"2px",color:'#f5f6f7', fontSize:"16px"}}>
-          {arr[8]}
-      </Typography>   
-  </div>  
-      </ListItem>
+<Stack spacing={2} style={{ width: '100%', margin:'5px', textAlign:'justify'}}>
+
+      <SnackbarContent
+      sx={{color:'#f5f6f7', backgroundColor: '#192734', fontSize:"15px",margin:'10px'}}
+        message={arr[8]}
+      />
+
+    </Stack>
+
       <ListItem style={{margin:"5px"}}>
       <NewspaperIcon  style={{ marginRight:'10px', color:'#52edc7'}} />
           <Typography style={{ fontFamily:"Roboto Slab", color:'#f5f6f7', marginLeft:'0.2em',  fontSize:"16px", fontWeight: 500}}>
