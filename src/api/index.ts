@@ -16,7 +16,7 @@ export async function fetchALL<Response = any>(url: string, init?: RequestInit):
 
   return response.json()
 }
-
+/** 
 export async function fetchUA<Response = any>(url: string, init?: RequestInit): Promise<Response> {
     const response = await fetch(
       `https://napfix.com/api/${url}`,
@@ -57,7 +57,7 @@ export async function fetchUA<Response = any>(url: string, init?: RequestInit): 
     return response.json()
   }
   
-  
+*/  
   export async function fetchEN<Response = any>(url: string, init?: RequestInit): Promise<Response> {
     const response = await fetch(
       `https://napfix.com/api/${url}`,

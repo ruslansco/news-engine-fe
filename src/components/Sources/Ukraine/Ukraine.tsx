@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from '@mui/material';
-import { fetchUA } from '../../../api'
+import { fetchALL } from '../../../api'
 import { UkraineArticleType } from '../../types'
 import Articles from '../ArticlesList'
 import Pagination from '../Pagination';
@@ -32,7 +32,7 @@ function Ukraine() {
   
   
   React.useEffect(() => {
-    fetchUA<UkraineArticleType[]>("news/ukraine?page="+page)
+    fetchALL<UkraineArticleType[]>("news/ukraine?page="+page)
     .then(news => setNews(news))
     setTotalPages(totalPages);
     setTimeout(() => setLoading(false),600);

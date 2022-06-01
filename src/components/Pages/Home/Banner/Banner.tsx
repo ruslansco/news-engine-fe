@@ -145,7 +145,7 @@ Facilitate spotting misinformation.
       <ListItem  disableGutters divider dense>
       <PublicIcon  sx={{ mb: 0.5, marginRight:'5px', color:'#52edc7'}} />
 <Typography style={{ color:'#f5f6f7', marginLeft:'0.3em',fontFamily:"Roboto Slab", fontSize:"15px"}}>
-It has triggered Europe's largest refugee crisis since World War II, with more than 3.8 million Ukrainians leaving the country, and millions more internally displaced.{" "}
+It has triggered Europe's largest refugee crisis since World War II, with more than 6.8 million Ukrainians leaving the country, and millions more internally displaced.{" "}
 <Link href="https://en.wikipedia.org/wiki/2022_Russian_invasion_of_Ukraine" style={{fontFamily:"Roboto",fontSize:"14px"}}>
         {'Wikipedia'}
       </Link>
@@ -202,34 +202,34 @@ It has triggered Europe's largest refugee crisis since World War II, with more t
       <ListItem   divider dense style={{marginLeft:'1em'}}>
             <StarIcon  sx={{ mb: 0.5, marginRight:'5px', color:'#52edc7',fontFamily:"Roboto Slab", fontSize:"15px"}} />
           <Typography style={{ color:'#f5f6f7', marginLeft:'0.3em'}}>
-        Deaths: At least 23K
+        Deaths: At least 46K
       </Typography>     
       </ListItem>
       <ListItem   divider dense sx={{marginLeft:'1em'}}>
 <DirectionsRunIcon  sx={{ mb: 0.5, marginRight:'5px', color:'#52edc7'}} />
 <Typography style={{ color:'#f5f6f7', marginLeft:'0.3em',fontFamily:"Roboto Slab", fontSize:"15px"}}>
-Displaced: Approx. 10M
+Displaced: Approx. 15M
 </Typography>
 </ListItem>
 
 <ListItem   divider dense sx={{marginLeft:'1em'}}>
 <LocalPharmacyIcon  sx={{ mb: 0.5, marginRight:'5px', color:'#52edc7'}} />
 <Typography style={{ color:'#f5f6f7', marginLeft:'0.3em',fontFamily:"Roboto Slab", fontSize:"15px"}}>
-Non-fatal injuries: 1.9K
+Non-fatal injuries: 13K
 </Typography>
 </ListItem>
 
 <ListItem   divider dense sx={{marginLeft:'1em'}}>
 <HouseIcon  sx={{ mb: 0.5, marginRight:'5px', color:'#52edc7'}} />
 <Typography style={{ color:'#f5f6f7', marginLeft:'0.3em',fontFamily:"Roboto Slab", fontSize:"15px"}}>
-Buildings destroyed: 1.7K
+Buildings destroyed: 2.3K
 </Typography>
 </ListItem>
 
 <ListItem  divider dense sx={{marginLeft:'1em'}}>
 <LocalAtmIcon  sx={{ mb: 0.5, marginRight:'5px', color:'#52edc7'}} />
 <Typography style={{ color:'#f5f6f7', marginLeft:'0.3em',fontFamily:"Roboto Slab", fontSize:"15px"}}>
-Property damage: $565B
+Property damage: $600B
 </Typography>
 </ListItem>
     </List>

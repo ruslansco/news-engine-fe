@@ -25,6 +25,7 @@ import Divider from '@mui/material/Divider';
 import { Link } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import SnackbarContent from '@mui/material/SnackbarContent';
 
 function WorldArticle() {
   const [loading, setLoading] = React.useState(true);
@@ -58,7 +59,7 @@ const obj = article.find(o => o.title === articleTitle);
 <Banner/>
 {(loading === false&&obj!=null) ? (
 
-<Container>
+<Container style={{minWidth:"70%",maxWidth:"70%"}}>
 <IconButton color="secondary" aria-label="Go back" onClick={() => navigate(-1)}>
         <ArrowBackIcon />
       </IconButton>
@@ -66,32 +67,36 @@ const obj = article.find(o => o.title === articleTitle);
     <Grid id="article" container justifyContent="center"alignItems="center" textAlign="center"marginTop="20px"marginBottom="10px"border="1px solid #000">
 
       <Card style={{color:'#f5f6f7', backgroundColor: '#151E29'}}>
+      
       <CardMedia
         component="img"
         sx={{
-          borderBottom:"1px solid #000",
+          border:"1px solid #000",
           height:"auto",
-          width:"100%",
+          width:"80%",
+          margin:"auto",
+          borderRadius:"10px", 
+          overflow:"hidden"
         }}
         alt="Not Found"
         src={obj.image}
       />
   <CardContent style={{}}>
-  <Typography style={{color:'#f5f6f7', fontFamily:"Roboto",fontSize:"1.5em", fontWeight:600, textTransform: "uppercase", marginBottom:"5px"}}>
+  <Typography style={{color:'#f5f6f7', fontFamily:"Roboto",fontSize:"1.5em", fontWeight:600, textTransform: "uppercase", margin:"5px"}}>
   {obj.title}
        </Typography>
 
-       <Divider style={{background:"#52edc7",marginBottom:"10px"}} variant="middle"/>
+       <Divider style={{background:"#52edc7",marginTop:"10px"}} variant="middle"/>
   <List  style={{ width: '100%', textAlign:'center'}}>
-      <ListItem dense>
+ 
+  <Stack spacing={2} style={{ width: '100%', margin:'5px', textAlign:'justify'}}>
 
- <div style={{columnCount:"1"}}>
-          <Typography style={{ fontFamily:"Roboto", margin:"2px",color:'#f5f6f7', fontSize:"16px"}}>
-          {obj.text}
-      </Typography>   
+<SnackbarContent
+sx={{color:'#f5f6f7', backgroundColor: '#192734', fontSize:"15px",margin:'10px'}}
+  message={obj.text}
+/>
 
-  </div>  
-      </ListItem>
+</Stack>
         
 <ListItem style={{margin:"5px"}}>
 <LanguageIcon  style={{marginRight:'10px', color:'#52edc7'}} />

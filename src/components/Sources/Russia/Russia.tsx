@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from '@mui/material';
-import { fetchRU } from '../../../api'
+import { fetchALL } from '../../../api'
 import { RussiaArticleType } from '../../types'
 import Articles from '../ArticlesList'
 import Pagination from '../Pagination';
@@ -25,7 +25,7 @@ function Russia() {
   
   
   React.useEffect(() => {
-    fetchRU<RussiaArticleType[]>("news/russia?page="+page)
+    fetchALL<RussiaArticleType[]>("news/russia?page="+page)
     .then(news => setNews(news))
     setTotalPages(totalPages);
     setTimeout(() => setLoading(false),600);

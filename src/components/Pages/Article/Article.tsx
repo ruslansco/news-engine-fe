@@ -57,7 +57,7 @@ function Article() {
 <Banner/>
 {loading === false ? (
 
-<Container style={{minWidth:"60%",maxWidth:"60%"}}>
+<Container style={{minWidth:"70%",maxWidth:"70%"}}>
 <IconButton color="secondary" aria-label="Go back" onClick={() => navigate(-1)}>
         <ArrowBackIcon />
       </IconButton>
@@ -76,7 +76,7 @@ function Article() {
         style={{
           border:"1px solid #000",
           height:"auto",
-          width:"50%",
+          width:"80%",
           margin:"auto",
           borderRadius:"10px", 
           overflow:"hidden"

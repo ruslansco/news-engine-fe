@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes, Outlet, Link  } from "react-rou
 function Home() {
 
   return (
+
 <Box sx={{ display: 'flex' }}>
 <Nav/>
 <Box component="main" sx={{flexGrow: 1, p: 3}} >
@@ -15,8 +16,8 @@ function Home() {
    <TabPages/>
    </Box>
    <Outlet />
+   
    </Box>
-
   )
     }
 

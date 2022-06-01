@@ -14,6 +14,8 @@ import Divider from '@mui/material/Divider';
 import CssBaseline from '@mui/material/CssBaseline';
 import MenuList from './MenuItems'
 import { Link } from "react-router-dom";
+import Author from './Author';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const drawerWidth = 220;
 
@@ -112,8 +114,14 @@ const handleDrawerClose = () => {
             }}>
             <MenuIcon />
           </IconButton>
-  
-            <Typography variant="h5" noWrap component="div" style={{marginLeft:"15px"}} sx={{ flexGrow: 1}}>
+
+            <Typography style={{marginLeft:"1.5em"}} sx={{ flexGrow: 1}}>
+
+                      <Author/>
+            
+          </Typography>
+          
+          <Typography variant="h5" noWrap component="div" style={{marginLeft:"15px"}} sx={{ flexGrow: 1}}>
             <Link style={{ textDecoration: 'none', color:'#fff',fontFamily:"Roboto Slab",marginLeft:'0.2em',  fontSize:"1em", fontWeight: 500}}
                 to={`/`}>
                  ProNews.pro

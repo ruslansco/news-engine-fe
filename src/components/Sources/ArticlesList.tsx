@@ -30,6 +30,11 @@ function Articles({ articles }: ArticlesProps) {
   const date = today.toISOString().slice(0, 10)
   const time = (today.getHours() + ":" + today.getMinutes())
   
+  
+  const handleImgError = (e:any):string => {
+    return e.target.src = "../../assets/error_img.jpg"
+  }
+
   React.useEffect(()=>{
     setTimeout(() => setLoading(false),600);
     },[])
@@ -50,10 +55,17 @@ function Articles({ articles }: ArticlesProps) {
   {loading === false ? (
         <div>
         <CardMedia
+          referrerPolicy="no-referrer"
+          src={articles.image}
           component="img"
           height="160"
-          image={articles.image}
-          alt="Not Found"
+          onError={(e:any):any => {
+            /** 
+             * Any code. For instance, changing the `src` prop with a fallback url.
+             * In our code, I've added `e.target.className = fallback_className` for instance.
+             */
+            e.target.src = "https://www.interactive.org/images/games/No_Image_Available.jpg";
+          }}
           style={{ borderBottom: '1px solid #000'}}
         />
     </div>
@@ -64,8 +76,6 @@ function Articles({ articles }: ArticlesProps) {
  style={{margin:"25px"}}>
 <CircularProgress sx={{color:"#52edc7"}}/>
 </CardMedia>
-  
-
         <CardContent style={{minHeight: 150,maxHeight: 150}}>
   <Typography style={{minHeight: 95,maxHeight: 95,minWidth: 300,maxWidth: 345,color:'#f5f6f7', fontFamily:"Roboto", letterSpacing: "0.2px",fontSize:"15px", fontWeight:500, textTransform: "uppercase"}}>
         {((articles.title).length < 127) ? ((articles.title).trimEnd()) : ((articles.title).substring(0,124))+"..."}
